@@ -18,7 +18,7 @@ public class HTMLGenerator {
 
     public String getHtml() {
         ArgumentsHandler argumentsHandler = ArgumentsHandler.getInstance();
-        tableElements = argumentsHandler.createTableElementsFromArgs(argumentsHandler);
+        tableElements = argumentsHandler.createTableElementsFromArgs();
 
         //DEMO embedded content
         embeddedContent.add(new Embedded(HREF, burnedMyGithubHref, "Megoldás"));

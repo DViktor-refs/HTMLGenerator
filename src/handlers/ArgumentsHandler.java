@@ -39,21 +39,21 @@ public class ArgumentsHandler {
         checkArgs(argsList);
     }
 
-    public List<Rows> createTableElementsFromArgs(ArgumentsHandler argumentsHandler) {
+    public List<Rows> createTableElementsFromArgs() {
         List<Rows> result = new ArrayList<>();
 
-        if (argumentsHandler.getListOfArgs().size() == 1) {
-            System.out.println(argumentsHandler.getHelpText());
+        if (getListOfArgs().size() == 1) {
+            System.out.println(getHelpText());
             System.exit(0);
         }
         else {
-            if (argumentsHandler.getListOfArgs().size() >= 2) {
-                for (int i = 0; i < argumentsHandler.getListOfArgs().size(); i++) {
-                    if (argumentsHandler.getListOfArgs().get(i).getOption().contains(NAME)) {
-                        result.add(new Rows("Név", argumentsHandler.getListOfArgs().get(i).getParameter()));
+            if (getListOfArgs().size() >= 2) {
+                for (int i = 0; i < getListOfArgs().size(); i++) {
+                    if (getListOfArgs().get(i).getOption().contains(NAME)) {
+                        result.add(new Rows("Név", getListOfArgs().get(i).getParameter()));
                     }
-                    if (argumentsHandler.getListOfArgs().get(i).getOption().contains(EMAIL)) {
-                        result.add(new Rows("Elérhetőség", argumentsHandler.getListOfArgs().get(i).getParameter()));
+                    if (getListOfArgs().get(i).getOption().contains(EMAIL)) {
+                        result.add(new Rows("Elérhetőség", getListOfArgs().get(i).getParameter()));
                     }
                 }
             }
